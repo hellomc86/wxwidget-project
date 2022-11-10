@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Project2", "Project2.vcxproj", "{70AC5C5D-F7AD-4B03-B6E3-99869F042CDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_Linux|x64 = Debug_Linux|x64
+		Debug_Windows|x64 = Debug_Windows|x64
+		Release_Linux|x64 = Release_Linux|x64
+		Release_Windows|x64 = Release_Windows|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70AC5C5D-F7AD-4B03-B6E3-99869F042CDD}.Debug_Linux|x64.ActiveCfg = Debug_Linux|x64
+		{70AC5C5D-F7AD-4B03-B6E3-99869F042CDD}.Debug_Linux|x64.Build.0 = Debug_Linux|x64
+		{70AC5C5D-F7AD-4B03-B6E3-99869F042CDD}.Debug_Linux|x64.Deploy.0 = Debug_Linux|x64
+		{70AC5C5D-F7AD-4B03-B6E3-99869F042CDD}.Debug_Windows|x64.ActiveCfg = Debug_Windows|x64
+		{70AC5C5D-F7AD-4B03-B6E3-99869F042CDD}.Debug_Windows|x64.Build.0 = Debug_Windows|x64
+		{70AC5C5D-F7AD-4B03-B6E3-99869F042CDD}.Release_Linux|x64.ActiveCfg = Release_Linux|x64
+		{70AC5C5D-F7AD-4B03-B6E3-99869F042CDD}.Release_Linux|x64.Build.0 = Release_Linux|x64
+		{70AC5C5D-F7AD-4B03-B6E3-99869F042CDD}.Release_Linux|x64.Deploy.0 = Release_Linux|x64
+		{70AC5C5D-F7AD-4B03-B6E3-99869F042CDD}.Release_Windows|x64.ActiveCfg = Release_Windows|x64
+		{70AC5C5D-F7AD-4B03-B6E3-99869F042CDD}.Release_Windows|x64.Build.0 = Release_Windows|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5962F19D-5A0A-4DCB-AB2F-D144A643FB15}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release_Windows|x64">
+      <Configuration>Release_Windows</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_Windows|x64">
+      <Configuration>Debug_Windows</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Linux|x64">
+      <Configuration>Release_Linux</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_Linux|x64">
+      <Configuration>Debug_Linux</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals" Condition="'$(Configuration)' == 'Debug_Windows' OR '$(Configuration)' == 'Release_Windows'">
+    <ProjectGuid>{70ac5c5d-f7ad-4b03-b6e3-99869f042cdd}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Project2</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <wxShortVersionString>32</wxShortVersionString>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals" Condition="'$(Configuration)' == 'Debug_Linux' OR '$(Configuration)' == 'Release_Linux'">
+    <ProjectGuid>{70ac5c5d-f7ad-4b03-b6e3-99869f042cdd}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>Project2</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
+    <LinuxProjectType>{2238F9CD-F817-4ECC-BD14-2524D2669B35}</LinuxProjectType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Windows|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug_Windows|x64'">
+    <PlatformToolset>v143</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Linux|x64'" Label="Configuration">
+										   
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Linux|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>																									   
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release_Windows|x64'" />
+  <ImportGroup Label="Shared" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Windows|x64'">
+    <PublicIncludeDirectories>$(WXWIN)\include;$(WXWIN)\include\msvc;$(WXWIN);$(PublicIncludeDirectories)</PublicIncludeDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Windows|x64'">
+    <LibraryPath>$(WXWIN)/lib/vc_x64_lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Linux|x64'">
+    <IncludePath>/usr/local/include/wx-3.2;/usr/local/lib/wx/include/gtk3-unicode-3.2</IncludePath>
+    <LibraryPath>/usr/local/lib;</LibraryPath>
+    <LocalRemoteCopySources>false</LocalRemoteCopySources>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Windows|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(WXWIN)/lib/vc_x64_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(WXWIN)/include/msvc;$(WXWIN)/include;$(WXWIN);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;__WXMSW__;$(wxUsingDllDefine);$(wxVersionDefine);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Windows|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>__WXMSW__;$(wxUsingDllDefine);$(wxVersionDefine);</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\lib\$(wxOutDirName)\$(wxIncSubDir);.\..\include;..\3rdparty\catch\include;.;.\..\samples;$(WXWIN)/lib/vc_x64_lib;$(WXWIN)/lib/vc_x64_lib/mswud;$(WXWIN)/include;$(WXWIN);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(WXWIN)/lib/vc_x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>wxmsw$(wxShortVersionString)ud_webview.lib;wxmsw$(wxShortVersionString)ud_richtext.lib;wxmsw$(wxShortVersionString)ud_stc.lib;wxmsw$(wxShortVersionString)ud_aui.lib;wxmsw$(wxShortVersionString)ud_media.lib;wxmsw$(wxShortVersionString)ud_xrc.lib;wxbase$(wxShortVersionString)ud_xml.lib;wxmsw$(wxShortVersionString)ud_html.lib;wxmsw$(wxShortVersionString)ud_core.lib;wxbase$(wxShortVersionString)ud_net.lib;wxbase$(wxShortVersionString)ud.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexud.lib;wxexpatd.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;winspool.lib;winmm.lib;shell32.lib;comctl32.lib;ole32.lib;oleaut32.lib;uuid.lib;rpcrt4.lib;advapi32.lib;ws2_32.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Linux|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_REENTRANT;</PreprocessorDefinitions>
+      <CAdditionalWarning>switch;no-deprecated-declarations;empty-body;conversion;return-type;parentheses;no-pointer-sign;no-format;uninitialized;unreachable-code;unused-function;unused-value;unused-variable;%(CAdditionalWarning)</CAdditionalWarning>
+      <CppAdditionalWarning>switch;no-deprecated-declarations;empty-body;conversion;return-type;parentheses;no-format;uninitialized;unreachable-code;unused-function;unused-value;unused-variable;%(CppAdditionalWarning)</CppAdditionalWarning>
+      <PositionIndependentCode>true</PositionIndependentCode>
+      <ExceptionHandling>Disabled</ExceptionHandling>
+      <DebugInformationFormat>FullDebug</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <AdditionalOptions>-pipe -std=gnu++0x `wx-config --cxxflags`</AdditionalOptions>
+    </ClCompile>
+    <Link />
+    <Link />
+    <RemotePreLinkEvent>
+      <Command>
+      </Command>
+    </RemotePreLinkEvent>
+    <Link>
+      <AdditionalOptions>-pipe `wx-config --libs` %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
